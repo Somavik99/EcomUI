@@ -1,15 +1,13 @@
-// import React, { useState } from "react";
+import React, { useState } from "react";
 import { ImagesThumbnail } from "../../ImageData/ImageData";
 import NavBar from "../NavBar/NavBar";
 
 const HomePage = () => {
-  // const [ImgState, setImageState] = useState([])
+  const [ImgState, setImageState] = useState();
 
-  let Thumbnails = [];
-  for (let i = 0; i <= ImagesThumbnail.length; i++) {
-    Thumbnails.push(i);
-  }
 
+
+  
   return (
     <div>
       <div>
@@ -17,8 +15,15 @@ const HomePage = () => {
           <NavBar />
         </div>
         <div>
-          {Thumbnails.map((imgT, index) => {
-            return <div key={index}>{imgT.imageT1}</div>;
+          {ImagesThumbnail.map((imgT, index) => {
+            return (
+              <div key={index}>
+                <span>{imgT.imageT1}</span>
+                <span>{imgT.imageT2}</span>
+                <span>{imgT.imageT3}</span>
+                <span>{imgT.imageT4}</span>
+              </div>
+            );
           })}
         </div>
       </div>
