@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FullImages } from "../../ImageData/ImageData";
 import NavBar from "../NavBar/NavBar";
+import AddItems from "../DetailsADD/AddItems";
 
 const HomePage = () => {
   const [ImgState, setImageState] = useState(FullImages[0]);
@@ -37,6 +38,9 @@ const HomePage = () => {
               </div>
             );
           })}
+        </div>
+        <div>
+          <AddItems/>
         </div>
       </div>
     </div>

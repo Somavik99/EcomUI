@@ -2,18 +2,18 @@ import React, { createContext, useReducer } from "react";
 
 export const ContextCart = createContext();
 
-export const initialItems= []
+export const initialItems = { items: [], count: 0 };
 
 export const CartContextFunction = (state, action) => {
   switch (action.type) {
     case "":
-      return ;
+      return;
     default:
       return console.error(action.type);
   }
 };
 
- const CartContext = ({ children }) => {
+const CartContext = ({ children }) => {
   const [CartState, dispatch] = useReducer(CartContextFunction, initialItems);
 
   return (
