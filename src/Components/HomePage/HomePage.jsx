@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { ImagesThumbnail } from "../../ImageData/ImageData";
+import { FullImages } from "../../ImageData/ImageData";
 import NavBar from "../NavBar/NavBar";
 
 const HomePage = () => {
-  const [ImgState, setImageState] = useState();
+  const [ImgState, setImageState] = useState(FullImages[0]);
 
+  const HandleImageChange = (image) => {
+    setImageState(image);
+  };
 
-
-  
   return (
     <div>
       <div>
@@ -15,13 +16,18 @@ const HomePage = () => {
           <NavBar />
         </div>
         <div>
-          {ImagesThumbnail.map((imgT, index) => {
+          <div>
+            <img src={ImgState.image} alt="" />
+          </div>
+          {FullImages.map((imgT, index) => {
             return (
               <div key={index}>
-                <span>{imgT.imageT1}</span>
-                <span>{imgT.imageT2}</span>
-                <span>{imgT.imageT3}</span>
-                <span>{imgT.imageT4}</span>
+                <img
+                  src={imgT.image}
+                  alt="err"
+                  style={{ height: "120px", width: "120px" }}
+                  onClick={() => HandleImageChange(imgT)}
+                />
               </div>
             );
           })}
