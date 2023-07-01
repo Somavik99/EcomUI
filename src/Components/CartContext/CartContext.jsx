@@ -2,6 +2,8 @@ import React, { createContext, useReducer } from "react";
 
 export const ContextCart = createContext();
 
+export const initialItems= []
+
 export const CartContextFunction = (state, action) => {
   switch (action.type) {
     case "":
@@ -11,8 +13,8 @@ export const CartContextFunction = (state, action) => {
   }
 };
 
-const CartContext = ({ children }) => {
-  const [CartState, dispatch] = useReducer(CartContextFunction, []);
+ const CartContext = ({ children }) => {
+  const [CartState, dispatch] = useReducer(CartContextFunction, initialItems);
 
   return (
     <ContextCart.Provider

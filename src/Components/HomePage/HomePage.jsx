@@ -8,7 +8,7 @@ const HomePage = () => {
   let HandleImageChange = (images) => {
     setTimeout(() => {
       setImageState(images);
-    }, 500);
+    }, 200);
   };
 
   return (
