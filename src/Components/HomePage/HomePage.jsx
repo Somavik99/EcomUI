@@ -5,8 +5,10 @@ import NavBar from "../NavBar/NavBar";
 const HomePage = () => {
   const [ImgState, setImageState] = useState(FullImages[0]);
 
-  const HandleImageChange = (image) => {
-    setImageState(image);
+  let HandleImageChange = (images) => {
+    setTimeout(() => {
+      setImageState(images);
+    }, 500);
   };
 
   return (
@@ -17,7 +19,11 @@ const HomePage = () => {
         </div>
         <div>
           <div>
-            <img src={ImgState.image} alt="" />
+            <img
+              src={ImgState.image}
+              alt=""
+              style={{ height: "500px", width: "500px" }}
+            />
           </div>
           {FullImages.map((imgT, index) => {
             return (
