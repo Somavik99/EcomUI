@@ -12,7 +12,7 @@ const AddItems = () => {
       type: Actions.ADD_ITEMS,
       payload: {
         ...item,
-        quantity: initialItems.count + 1,
+        quantity: 1,
       },
     });
   };
@@ -31,9 +31,7 @@ const AddItems = () => {
   const IncreaseCount = (counts) => {
     CartDispatch({
       type: Actions.INCREASE_COUNT,
-      payload: {
-        quantity: counts ,
-      },
+      payload:counts
     });
   };
 

@@ -18,12 +18,25 @@ export const CartContextFunction = (state, action) => {
             { id: Date.now() },
             action.payload.quantity,
           ],
-        
         };
       }
 
-      case Actions.INCREASE_COUNT:
-        
+    case Actions.INCREASE_COUNT: {
+      if (action.payload === initialItems.count) {
+        return (initialItems.count += 1);
+      } else {
+        return state;
+      }
+    }
+    case Actions.DECREASE_COUNT: {
+      if (action.payload > 0) {
+        return (initialItems.count -=1);
+      } else if (action.payload === 0) {
+        return initialItems.count;
+      } else {
+        return state;
+      }
+    }
     default:
       return console.error(action.type);
   }

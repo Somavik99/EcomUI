@@ -23,7 +23,7 @@ const HomePage = () => {
             <img
               src={ImgState.image}
               alt=""
-              style={{ height: "500px", width: "500px" }}
+              style={{ height: "485px", width: "485px" }}
             />
           </div>
           {FullImages.map((imgT, index) => {
