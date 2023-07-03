@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FullImages } from "../../ImageData/ImageData";
 import NavBar from "../NavBar/NavBar";
 import AddItems from "../DetailsADD/AddItems";
+import "./HomePage.css"
 
 const HomePage = () => {
   const [ImgState, setImageState] = useState(FullImages[0]);
@@ -14,10 +15,10 @@ const HomePage = () => {
 
   return (
     <div>
-      <div>
-        <div>
+       <div>
           <NavBar />
         </div>
+      <div className="Home__cont">
         <div>
           <div>
             <img
