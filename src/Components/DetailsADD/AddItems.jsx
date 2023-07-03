@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
-import { ContextCart, initialItems } from "../CartContext/CartContext";
+import React from "react";
+import {  useCartContext } from "../CartContext/CartContext";
 import { Actions } from "../CartContext/Actions";
 
 const AddItems = () => {
-  const { CartState, CartDispatch } = useContext(ContextCart);
+  const { CartState, CartDispatch } = useCartContext();
+
+  console.log(CartState.items)
 
   //Adding Items to cart
 
@@ -12,19 +14,17 @@ const AddItems = () => {
       type: Actions.ADD_ITEMS,
       payload: {
         ...item,
-        quantity: 1,
       },
     });
   };
 
+ 
   //Increase and decrease item count
 
   const DecreaseCount = (counts) => {
     CartDispatch({
       type: Actions.DECREASE_COUNT,
-      payload: {
-        quantity: counts ,
-      },
+      payload: counts,
     });
   };
 
@@ -38,11 +38,14 @@ const AddItems = () => {
   return (
     <div>
       <div>
-        <button onClick={() => DecreaseCount(initialItems.count)}>-</button>
-        <span>{initialItems.count}</span>
-        <button onClick={() => IncreaseCount(initialItems.count)}>+</button>
+
       </div>
-      <button onClick={() => AddItemToCart(CartState)}>Add To Cart</button>
+      <div>
+        <button onClick={() => DecreaseCount(CartState.count)}>-</button>
+        <span>{CartState.count}</span>
+        <button onClick={() => IncreaseCount(CartState.count)}>+</button>
+      </div>
+      <button onClick={()=> AddItemToCart(CartState)}>Add To Cart</button>
     </div>
   );
 };
