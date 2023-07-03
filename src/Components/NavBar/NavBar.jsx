@@ -1,25 +1,23 @@
-import React, { useState } from 'react'
-import logo from "../../Assets/images/logo.svg"
-import {BsCart} from "react-icons/bs"
-import {   useCartContext } from '../CartContext/CartContext'
-// import { ContextCart } from '../CartContext/CartContext'
-
-
+import React, { useState } from "react";
+import logo from "../../Assets/images/logo.svg";
+import { BsCart } from "react-icons/bs";
+import  { useCartContext } from '../CartContext/CartContext'
 
 const NavBar = () => {
+  const [ShowCartState, setShowCartState] = useState(false);
 
-const [ShowCartState, setShowCartState] = useState(false)
+  const { CartState } = useCartContext();
 
-const {CartState} = useCartContext()
+  const ShowCart = () => {
+    setShowCartState(!ShowCartState);
+  };
 
-const ShowCart = ()=>{
-  setShowCartState(!ShowCartState)
-}
+  let ItemsLEngth =  CartState.items.length;
 
   return (
-    <div >
+    <div>
       <img src={logo} alt="sneakers" />
-    <p>{CartState.items.length }</p>  
+      <p>{ItemsLEngth}</p>
       <BsCart onClick={ShowCart} />
       {/* {!ShowCartState && CartState.items.map((Cart,index)=>{
 return (
@@ -27,7 +25,7 @@ return (
 )
       })} */}
     </div>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;
