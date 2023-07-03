@@ -9,24 +9,22 @@ export const CartContextFunction = (state, action) => {
   switch (action.type) {
     case Actions.ADD_ITEMS: {
       if (action.payload === "" || !state.items.includes(action.payload)) {
-        return { items: [...state.items, action.payload] };
+        return { ...state, items: [...state.items,action.payload] };
       } else {
         return state;
       }
     }
 
     case Actions.INCREASE_COUNT: {
-      if (action.payload === initialItems.count) {
-        return { ...state, counts: state.count + 1 };
+      if (initialItems.count === 0) {
+        return { ...state, count: state.count + 1 };
       } else {
         return state;
       }
     }
     case Actions.DECREASE_COUNT: {
-      if (initialItems.count > 0) {
-        return { ...state, counts: state.count - 1 };
-      } else if (initialItems.count === 0) {
-        return initialItems.count;
+      if (state.count > 0 && state.count !== 0) {
+        return { ...state, count: state.count - 1 };
       } else {
         return state;
       }

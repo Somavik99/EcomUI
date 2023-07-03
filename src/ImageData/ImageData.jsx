@@ -23,6 +23,7 @@ const FullImages = [
 
 const ProductDescription = [
   {
+    id:Date.now(),
     title: "Sneaker Company",
     company: "Fall Limited Edition Sneakers",
     details:

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import logo from "../../Assets/images/logo.svg"
 import {BsCart} from "react-icons/bs"
-import {  initialItems, useCartContext } from '../CartContext/CartContext'
+import {   useCartContext } from '../CartContext/CartContext'
 // import { ContextCart } from '../CartContext/CartContext'
 
 
@@ -19,13 +19,13 @@ const ShowCart = ()=>{
   return (
     <div >
       <img src={logo} alt="sneakers" />
-    <p>{initialItems.items.length}</p>  
+    <p>{CartState.items}</p>  
       <BsCart onClick={ShowCart} />
-      {!ShowCartState && CartState.items.map((Cart,index)=>{
+      {/* {!ShowCartState && CartState.items.map((Cart,index)=>{
 return (
   <div key={index}>{Cart}</div>
 )
-      })}
+      })} */}
     </div>
   )
 }
