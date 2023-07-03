@@ -8,8 +8,8 @@ export const initialItems = { items: [], count: 0 };
 export const CartContextFunction = (state, action) => {
   switch (action.type) {
     case Actions.ADD_ITEMS: {
-      if (action.payload === "" || !state.items.includes(action.payload)) {
-        return { ...state, items: [...state.items,action.payload] };
+      if (action.payload !== "" || state.count !==0) {
+        return { ...state, items: [...state.items, action.payload] };
       } else {
         return state;
       }

@@ -10,14 +10,6 @@ const AddItems = () => {
 
   //Adding Items to cart
 
-  const AddItemToCart = (item) => {
- ;
-    CartDispatch({
-      type: Actions.ADD_ITEMS,
-      payload: item,
-    });
-  };
-
   //Increase and decrease item count
 
   const DecreaseCount = () => {
@@ -42,17 +34,23 @@ const AddItems = () => {
               <span>{prod.company}</span>
               <div>{prod.details}</div>
               <p>{prod.retailPrice}</p>
-
+              <p>{prod.off}</p>
+              <p style={{ textDecoration: "line-through", color: "gray" }}>
+                {prod.original}
+              </p>
               <div>
-                <button onClick={DecreaseCount}>
-                  -
-                </button>
+                <button onClick={DecreaseCount}>-</button>
                 <span>{CartState.count}</span>
-                <button onClick={IncreaseCount}>
-                  +
-                </button>
+                <button onClick={IncreaseCount}>+</button>
               </div>
-              <button onClick={() => AddItemToCart(prod)}>
+              <button
+                onClick={() => {
+                  CartDispatch({
+                    type: Actions.ADD_ITEMS,
+                    payload: [...CartState.items, prod],
+                  });
+                }}
+              >
                 Add To Cart
               </button>
             </div>

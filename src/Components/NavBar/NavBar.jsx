@@ -19,7 +19,7 @@ const ShowCart = ()=>{
   return (
     <div >
       <img src={logo} alt="sneakers" />
-    <p>{CartState.items}</p>  
+    <p>{CartState.items.length }</p>  
       <BsCart onClick={ShowCart} />
       {/* {!ShowCartState && CartState.items.map((Cart,index)=>{
 return (
