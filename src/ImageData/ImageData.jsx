@@ -14,6 +14,13 @@ const ImagesThumbnail = [
   { id: 4, imageT: <img src={Shoe4thumbnail} alt="Err" /> },
 ];
 
+const FullImages = [
+  { id: 1, image: Shoe1 },
+  { id: 2, image: Shoe2 },
+  { id: 3, image: Shoe3 },
+  { id: 4, image: Shoe4 },
+];
+
 const ProductDescription = [
   {
     title: "Sneaker Company",
@@ -23,13 +30,7 @@ const ProductDescription = [
     retailPrice: "$125.00",
     off: "50%",
     original: "$250",
-    FullImages: [
-      { id: 1, image: Shoe1 },
-      { id: 2, image: Shoe2 },
-      { id: 3, image: Shoe3 },
-      { id: 4, image: Shoe4 },
-    ],
   },
 ];
 
-export { ImagesThumbnail, ProductDescription };
+export { ImagesThumbnail, FullImages, ProductDescription };

@@ -1,6 +1,7 @@
 import React from "react";
 import {  useCartContext } from "../CartContext/CartContext";
 import { Actions } from "../CartContext/Actions";
+import { ProductDescription } from "../../ImageData/ImageData";
 
 const AddItems = () => {
   const { CartState, CartDispatch } = useCartContext();
@@ -38,7 +39,15 @@ const AddItems = () => {
   return (
     <div>
       <div>
-
+{
+  ProductDescription.map((prod,i)=>{
+return <div key={i}>
+<span>{prod.title}</span>
+<span>{prod.company}</span>
+<div>{prod.details}</div>
+</div>
+  })
+}
       </div>
       <div>
         <button onClick={() => DecreaseCount(CartState.count)}>-</button>
