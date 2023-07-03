@@ -2,7 +2,8 @@ import React from "react";
 import { useCartContext } from "../CartContext/CartContext";
 import { Actions } from "../CartContext/Actions";
 import { ProductDescription } from "../../ImageData/ImageData";
-
+import Plus from "../../Assets/images/icon-plus.svg";
+import Minus from "../../Assets/images/icon-minus.svg";
 const AddItems = () => {
   const { CartState, CartDispatch } = useCartContext();
 
@@ -30,20 +31,27 @@ const AddItems = () => {
         {ProductDescription.map((prod, i) => {
           return (
             <div key={i}>
-              <span>{prod.title}</span>
-              <span>{prod.company}</span>
-              <div>{prod.details}</div>
+              <p style={{ color: "#ff7e1b", fontWeight: "bolder" }}>
+                {prod.title}
+              </p>
+              <p>{prod.company}</p>
+              <p>{prod.details}</p>
               <p>{prod.retailPrice}</p>
               <p>{prod.off}</p>
               <p style={{ textDecoration: "line-through", color: "gray" }}>
                 {prod.original}
               </p>
               <div>
-                <button onClick={DecreaseCount}>-</button>
+                <span onClick={DecreaseCount}>
+                  <img src={Minus} alt="" />
+                </span>
                 <span>{CartState.count}</span>
-                <button onClick={IncreaseCount}>+</button>
+                <span onClick={IncreaseCount}>
+                  <img src={Plus} alt="" />
+                </span>
               </div>
               <button
+                disabled={CartState.count === 0}
                 onClick={() => {
                   CartDispatch({
                     type: Actions.ADD_ITEMS,
