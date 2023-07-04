@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Kumbh+Sans:wght@200;700&family=Libre+Baskerville&family=Montserrat+Alternates:wght@200&display=swap');
+
 .Btn__cont{
     display: flex;
     justify-content: space-between;
@@ -12,8 +14,27 @@
   flex-direction: row;
   align-content: flex-start;
     gap:47px;
-    border:2px solid black;
+    /* border:2px solid black; */
     width: 150px;
     background: whitesmoke;
+    height:30px;
+    padding: 2%;
 }
 
+
+.Add__btn{
+    width:380px;
+    height:50px;
+margin-left: 40px;
+font-size: 15px;
+font-weight: 600;
+background-color: hsl(26, 100%, 55%);
+color: white;
+border:none;
+border-radius: 8px;
+}
+
+
+.prod__company{
+    font-family: 'Kumbh Sans', sans-serif;
+}

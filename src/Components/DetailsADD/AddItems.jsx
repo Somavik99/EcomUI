@@ -1,10 +1,12 @@
 import React from "react";
-import {  initialItems, useCartContext } from "../CartContext/CartContext";
+import { useCartContext } from "../CartContext/CartContext";
 import { Actions } from "../CartContext/Actions";
 import { ProductDescription } from "../../ImageData/ImageData";
 import Plus from "../../Assets/images/icon-plus.svg";
 import Minus from "../../Assets/images/icon-minus.svg";
+import Cart from "../../Assets/images/icon-cart.svg";
 import "./AddItems.css";
+
 
 const AddItems = () => {
   const { CartState, CartDispatch } = useCartContext();
@@ -35,12 +37,28 @@ const AddItems = () => {
         {ProductDescription.map((prod, i) => {
           return (
             <div key={i}>
-              <p style={{ color: "#ff7e1b", fontWeight: "bolder" }}>
+              <p
+                style={{
+                  color: "#ff7e1b",
+                  fontWeight: "600",
+                  fontSize: "18px",
+                }}
+              >
                 {prod.title}
               </p>
-              <p>{prod.company}</p>
+              <p
+                style={{ fontSize: "50px", fontWeight: "900" }}
+                className="prod__company"
+              >
+                {prod.company}
+              </p>
               <p>{prod.details}</p>
-              <p>{prod.retailPrice * CartState.count.toString() }</p>
+              <p>
+                $
+                {CartState.count === 0
+                  ? prod.retailPrice
+                  : prod.retailPrice * CartState.count}
+              </p>
               <p>{prod.off}</p>
               <p style={{ textDecoration: "line-through", color: "gray" }}>
                 {prod.original}
@@ -61,15 +79,22 @@ const AddItems = () => {
                     onClick={() => IncreaseCount(prod)}
                   />
                 </div>
+
                 <button
                   disabled={CartState.count === 0}
                   onClick={() => {
-                  CartDispatch({
+                    CartDispatch({
                       type: Actions.ADD_ITEMS,
                       payload: [...CartState.items, prod],
                     });
                   }}
+                  className="Add__btn"
                 >
+                  <img
+                    src={Cart}
+                    style={{ marginRight: "18px" ,color:"white" }}
+                    alt="Cart"
+                  />
                   Add To Cart
                 </button>
               </div>
