@@ -9,11 +9,13 @@ export const CartContextFunction = (state, action) => {
   switch (action.type) {
     case Actions.ADD_ITEMS: {
       console.log(action.payload);
-      if (action.payload !== "" || !state.items.includes(action.payload) || initialItems.count === initialItems.count+1) {
-       ;
+      if (action.payload !== "" || !state.items.includes(action.payload)) {
+      
         return { ...state, items: [...state.items, action.payload] };
-      } else {
-        return state;
+      } else if(state.count=== state.count + 1) {
+        return { ...state, items: [...state.items,state.count, action.payload] };
+      }else{
+        return state
       }
     }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import {  useCartContext } from "../CartContext/CartContext";
+import {  initialItems, useCartContext } from "../CartContext/CartContext";
 import { Actions } from "../CartContext/Actions";
 import { ProductDescription } from "../../ImageData/ImageData";
 import Plus from "../../Assets/images/icon-plus.svg";
@@ -40,7 +40,7 @@ const AddItems = () => {
               </p>
               <p>{prod.company}</p>
               <p>{prod.details}</p>
-              <p>{prod.retailPrice * CartState.items.length }</p>
+              <p>{prod.retailPrice * CartState.count.toString() }</p>
               <p>{prod.off}</p>
               <p style={{ textDecoration: "line-through", color: "gray" }}>
                 {prod.original}
@@ -64,7 +64,7 @@ const AddItems = () => {
                 <button
                   disabled={CartState.count === 0}
                   onClick={() => {
-                   CartDispatch({
+                  CartDispatch({
                       type: Actions.ADD_ITEMS,
                       payload: [...CartState.items, prod],
                     });
