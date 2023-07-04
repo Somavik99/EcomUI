@@ -20,7 +20,7 @@ const NavBar = () => {
   return (
     <div className="NavBar">
       <div className="Nav__cont">
-      <img src={logo} alt="sneakers" />
+      <img src={logo} alt="sneakers" style={{marginRight:"1%", marginLeft:"-5%"}} />
       <div className="Nav__menu">
       <p>Collections</p>
       <p>Men</p>
@@ -28,7 +28,7 @@ const NavBar = () => {
       <p>About</p>
       <p>Contact</p>
       </div>
-      <p style={{marginRight:"-15%"}}><BsCart onClick={ShowCart}  /><span>{ItemsLEngth}</span></p>
+      <p style={{marginRight:"-8%"}}><BsCart onClick={ShowCart}  /><span>{ItemsLEngth}</span></p>
       <p><img src={Avatar} alt="Avatar" /></p>
       </div>
       {/* {!ShowCartState && CartState.items.map((Cart,index)=>{

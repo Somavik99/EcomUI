@@ -14,23 +14,28 @@ const HomePage = () => {
   };
 
   return (
-    <div>
+    <>
        <div>
           <NavBar />
         </div>
+    <div className="Home">
+    
       <div className="Home__cont">
         <div>
-          <div>
+          <div className="FullImage">
             <img
               src={ImgState.image}
-              alt=""
+              alt="Sneakers"
               style={{ height: "485px", width: "485px" }}
+              className="fImg"
             />
-          </div>
+          </div> 
+          <div className="Img__cont" >
           {FullImages.map((imgT, index) => {
             return (
-              <div key={index}>
+              <div key={index} >
                 <img
+                className="tImg"
                   src={imgT.image}
                   alt="err"
                   style={{ height: "120px", width: "120px" }}
@@ -39,12 +44,14 @@ const HomePage = () => {
               </div>
             );
           })}
+          </div>
         </div>
-        <div>
+        <div className="Add__cont">
           <AddItems/>
         </div>
       </div>
     </div>
+    </>
   );
 };
 

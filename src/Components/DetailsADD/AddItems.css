@@ -1,0 +1,19 @@
+.Btn__cont{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+
+}
+
+.Plus__minus{
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+  flex-direction: row;
+  align-content: flex-start;
+    gap:47px;
+    border:2px solid black;
+    width: 150px;
+    background: whitesmoke;
+}
+

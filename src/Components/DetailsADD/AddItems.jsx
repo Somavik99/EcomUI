@@ -1,9 +1,11 @@
 import React from "react";
-import { useCartContext } from "../CartContext/CartContext";
+import {  useCartContext } from "../CartContext/CartContext";
 import { Actions } from "../CartContext/Actions";
 import { ProductDescription } from "../../ImageData/ImageData";
 import Plus from "../../Assets/images/icon-plus.svg";
 import Minus from "../../Assets/images/icon-minus.svg";
+import "./AddItems.css";
+
 const AddItems = () => {
   const { CartState, CartDispatch } = useCartContext();
 
@@ -38,31 +40,39 @@ const AddItems = () => {
               </p>
               <p>{prod.company}</p>
               <p>{prod.details}</p>
-              <p>{prod.retailPrice}</p>
+              <p>{prod.retailPrice * CartState.items.length }</p>
               <p>{prod.off}</p>
               <p style={{ textDecoration: "line-through", color: "gray" }}>
                 {prod.original}
               </p>
-              <div>
-                <span onClick={() => DecreaseCount(prod)}>
-                  <img src={Minus} alt="" />
-                </span>
-                <span>{CartState.count}</span>
-                <span onClick={() => IncreaseCount(prod)}>
-                  <img src={Plus} alt="" />
-                </span>
+              <div className="Btn__cont">
+                <div className="Plus__minus">
+                  <img
+                    src={Minus}
+                    alt="minus"
+                    onClick={() => DecreaseCount(prod)}
+                  />
+
+                  <>{CartState.count}</>
+
+                  <img
+                    src={Plus}
+                    alt="plus"
+                    onClick={() => IncreaseCount(prod)}
+                  />
+                </div>
+                <button
+                  disabled={CartState.count === 0}
+                  onClick={() => {
+                   CartDispatch({
+                      type: Actions.ADD_ITEMS,
+                      payload: [...CartState.items, prod],
+                    });
+                  }}
+                >
+                  Add To Cart
+                </button>
               </div>
-              <button
-                disabled={CartState.count === 0}
-                onClick={() => {
-                  CartDispatch({
-                    type: Actions.ADD_ITEMS,
-                    payload: [...CartState.items, prod],
-                  });
-                }}
-              >
-                Add To Cart
-              </button>
             </div>
           );
         })}
