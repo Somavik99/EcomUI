@@ -12,9 +12,8 @@ export const CartContextFunction = (state, action) => {
       if (action.payload !== "" || !state.items.includes(action.payload)) {
       
         return { ...state, items: [...state.items, action.payload] };
-      } else if(state.count=== state.count + 1) {
-        return { ...state, items: [...state.items,state.count, action.payload] };
-      }else{
+      } 
+      else{
         return state
       }
     }

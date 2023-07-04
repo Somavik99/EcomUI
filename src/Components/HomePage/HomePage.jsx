@@ -38,7 +38,7 @@ const HomePage = () => {
                 className="tImg"
                   src={imgT.image}
                   alt="err"
-                  style={{ height: "120px", width: "120px" }}
+                  style={{ height: "100px", width: "100px" }}
                   onClick={() => HandleImageChange(imgT)}
                 />
               </div>

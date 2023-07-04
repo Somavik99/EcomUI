@@ -7,7 +7,6 @@ import Minus from "../../Assets/images/icon-minus.svg";
 import Cart from "../../Assets/images/icon-cart.svg";
 import "./AddItems.css";
 
-
 const AddItems = () => {
   const { CartState, CartDispatch } = useCartContext();
 
@@ -53,11 +52,12 @@ const AddItems = () => {
                 {prod.company}
               </p>
               <p>{prod.details}</p>
-              <p>
+              <p style={{ fontSize: "30px", fontWeight: "700" }}>
                 $
                 {CartState.count === 0
                   ? prod.retailPrice
                   : prod.retailPrice * CartState.count}
+                .00
               </p>
               <p>{prod.off}</p>
               <p style={{ textDecoration: "line-through", color: "gray" }}>
@@ -65,19 +65,14 @@ const AddItems = () => {
               </p>
               <div className="Btn__cont">
                 <div className="Plus__minus">
-                  <img
-                    src={Minus}
-                    alt="minus"
-                    onClick={() => DecreaseCount(prod)}
-                  />
+                  <span onClick={() => DecreaseCount(prod)}>
+                    <img src={Minus} alt="minus" />
+                  </span>
 
                   <>{CartState.count}</>
-
-                  <img
-                    src={Plus}
-                    alt="plus"
-                    onClick={() => IncreaseCount(prod)}
-                  />
+                  <span onClick={() => IncreaseCount(prod)}>
+                    <img src={Plus} alt="plus" />
+                  </span>
                 </div>
 
                 <button
@@ -92,7 +87,7 @@ const AddItems = () => {
                 >
                   <img
                     src={Cart}
-                    style={{ marginRight: "18px" ,color:"white" }}
+                    style={{ marginRight: "18px", color: "white" }}
                     alt="Cart"
                   />
                   Add To Cart
