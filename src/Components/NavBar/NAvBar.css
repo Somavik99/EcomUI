@@ -1,21 +1,57 @@
-.Nav__cont{
-    display:flex;
-    justify-content:space-evenly;
-    align-items:center;
+.Nav__cont {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.Nav__menu{
-    display: grid;
-    justify-content: space-evenly;
-    align-items:center;
-    grid-template-columns: repeat(6 , 1fr);
-    margin-left:-10%;
-    column-gap: 8%;
-    border:2px solid black;
-    height:140px;
+.Nav__menu {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(6, 1fr);
+  margin-left: -10%;
+  /* column-gap: 8%; */
+  height: 140px;
+  padding-left: 2%;
 }
 
-.NavBar{
-    border:2px solid black;
-    margin-bottom: 80px;
+.Nav__menu span {
+  height: 130px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  gap: unset;
+  align-items: center;
+  position: relative;
+  color: rgb(147, 142, 142);
+  border: 5px solid transparent;
+  transition: 0.1s ease;
+}
+
+.Nav__menu span:hover {
+    transform:scale(1);
+  border-bottom: 5px solid orange;
+  position: static;
+  cursor: pointer;
+}
+
+.NavBar {
+  margin-bottom: 80px;
+  border-bottom: 1px solid rgba(165, 165, 165, 0.528);
+}
+
+.Avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: 0.2s ease-in;
+  outline: none;
+  border: 3px solid transparent;
+  position:inherit;
+}
+
+.Avatar img:hover {
+  transform: scale(1);
+  outline: none;
+  border: 3px solid orange;
 }

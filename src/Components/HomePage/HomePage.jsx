@@ -15,7 +15,7 @@ const HomePage = () => {
 
   return (
     <>
-       <div style={{paddingLeft:"15%",paddingRight:"15%"}}>
+       <div style={{paddingLeft:"10%",paddingRight:"10%"}}>
           <NavBar />
         </div>
     <div className="Home">

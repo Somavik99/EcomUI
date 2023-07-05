@@ -15,19 +15,19 @@ const AddItems = () => {
 
   //Increase and decrease item count
 
-  const DecreaseCount = (item) => {
-    CartDispatch({
-      type: Actions.DECREASE_COUNT,
-      payload: item,
-    });
-  };
+const DecreaseCount = (count) => {
+  CartDispatch({
+    type: Actions.DECREASE_COUNT,
+    payload: count,
+  });
+};
 
-  const IncreaseCount = (item) => {
-    CartDispatch({
-      type: Actions.INCREASE_COUNT,
-      payload: item,
-    });
-  };
+const IncreaseCount = (count) => {
+  CartDispatch({
+    type: Actions.INCREASE_COUNT,
+    payload: count,
+  });
+};
 
   return (
     <div>
@@ -79,7 +79,7 @@ const AddItems = () => {
                   onClick={() => {
                     CartDispatch({
                       type: Actions.ADD_ITEMS,
-                      payload: [prod],
+                      payload: [...CartState.items,prod.id],
                     });
                   }}
                   className="Add__btn"

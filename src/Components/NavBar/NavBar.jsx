@@ -22,7 +22,7 @@ const NavBar = () => {
         <img
           src={logo}
           alt="sneakers"
-          style={{ marginRight: "1%", marginLeft: "-5%" }}
+          style={{ marginRight: "1%", marginLeft: "-5%", width:"200px" }}
         />
         <div className="Nav__menu">
           <span>Collections</span>
