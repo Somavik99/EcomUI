@@ -20,7 +20,7 @@ export const CartContextFunction = (state, action) => {
 
     case Actions.INCREASE_COUNT: {
       if (initialItems.count === 0) {
-        return { ...state, count: state.count + 1 };
+        return {...state, count: state.count + 1 };
       } else {
         return state;
       }

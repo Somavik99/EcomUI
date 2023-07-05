@@ -32,7 +32,7 @@ const NavBar = () => {
           <p>Contact</p>
         </div>
         <p style={{ marginRight: "-8%" }}>
-          <div>{ItemsLEngth}</div>
+          <div style={{marginLeft:"15px",position:"relative"}}>{ItemsLEngth}</div>
           <img src={BlackCart} onClick={ShowCart} alt="Cart" />
         </p>
         <p>

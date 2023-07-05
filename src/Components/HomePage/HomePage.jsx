@@ -15,7 +15,7 @@ const HomePage = () => {
 
   return (
     <>
-       <div>
+       <div style={{paddingLeft:"15%",paddingRight:"15%"}}>
           <NavBar />
         </div>
     <div className="Home">
@@ -33,9 +33,9 @@ const HomePage = () => {
           <div className="Img__cont" >
           {FullImages.map((imgT, index) => {
             return (
-              <div key={index} >
+              <div key={index}  className="tImg">
                 <img
-                className="tImg"
+               
                   src={imgT.image}
                   alt="err"
                   style={{ height: "100px", width: "100px" }}
