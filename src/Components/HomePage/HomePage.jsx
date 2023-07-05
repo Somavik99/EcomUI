@@ -28,6 +28,7 @@ const HomePage = () => {
               alt="Sneakers"
               style={{ height: "485px", width: "485px" }}
               className="fImg"
+              
             />
           </div> 
           <div className="Img__cont" >
@@ -38,7 +39,7 @@ const HomePage = () => {
                
                   src={imgT.image}
                   alt="err"
-                  style={{ height: "100px", width: "100px" }}
+                  style={{ height: "100px", width: "100px",borderRadius:"20px" }}
                   onClick={() => HandleImageChange(imgT)}
                 />
               </div>

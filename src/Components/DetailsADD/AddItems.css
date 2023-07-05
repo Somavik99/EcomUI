@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Kumbh+Sans:wght@200;700&family=Libre+Baskerville&family=Montserrat+Alternates:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Kumbh+Sans:wght@600;700&family=Libre+Baskerville&family=Montserrat+Alternates:wght@200&display=swap");
 
 .Btn__cont {
   display: flex;
@@ -40,4 +40,12 @@
 
 .prod__company {
   font-family: "Kumbh Sans", sans-serif;
+}
+
+
+.off{
+ padding: 5px  15px;
+ border-radius: 8px;
+ color:orange;
+ font-weight: 600;
 }

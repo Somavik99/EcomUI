@@ -26,7 +26,7 @@ export const CartContextFunction = (state, action) => {
       }
     }
     case Actions.DECREASE_COUNT: {
-      if (state.count > 0 && state.count !== 0) {
+      if ( state.count !== 0) {
         return { ...state, count: state.count - 1 };
       } else {
         return state;

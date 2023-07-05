@@ -12,7 +12,6 @@ const AddItems = () => {
 
   console.log(CartState.items);
 
-  //Adding Items to cart
 
   //Increase and decrease item count
 
@@ -51,16 +50,16 @@ const AddItems = () => {
               >
                 {prod.company}
               </p>
-              <p>{prod.details}</p>
-              <p style={{ fontSize: "30px", fontWeight: "700" }}>
+              <p style={{color:"gray", fontWeight:"600"}}>{prod.details}</p>
+              <span style={{ fontSize: "30px", fontWeight: "700" }}>
                 $
                 {CartState.count === 0
                   ? prod.retailPrice
                   : prod.retailPrice * CartState.count}
                 .00
-              </p>
-              <p>{prod.off}</p>
-              <p style={{ textDecoration: "line-through", color: "gray" }}>
+              </span>
+              <span style={{marginLeft:"50px", background: "#f6be565b" }} className="off">{prod.off}</span>
+              <p style={{ textDecoration: "line-through", color: "gray" , fontWeight:"600",fontSize:"20px"}}>
                 {prod.original}
               </p>
               <div className="Btn__cont">
@@ -80,7 +79,7 @@ const AddItems = () => {
                   onClick={() => {
                     CartDispatch({
                       type: Actions.ADD_ITEMS,
-                      payload: [...CartState.items, prod],
+                      payload: [prod],
                     });
                   }}
                   className="Add__btn"

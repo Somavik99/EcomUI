@@ -7,7 +7,7 @@
 }
 
 .Add__cont {
-  margin-top: -15%;
+  margin-top: 0.1%;
   margin-left: 5%;
 }
 
@@ -24,23 +24,23 @@
   margin-left: -5%;
 }
 
-.tImg:hover {
-  background: hsl(25, 100%, 94%);
-}
-
-.tImg {
+.tImg img {
   overflow: none;
   border-radius: 20px;
   transition: 0.5s ease;
+  width:100px;
+  height: 100px;
+  border:4px solid transparent ;
 }
 
-.tImg:hover {
-  background-color: hsl(25, 100%, 94%);
+.tImg img:hover{
+    border:4px solid orange;
+    background:rgba(240, 238, 238, 0.717);
 }
 
-.tImg:focus {
-  background-color: hsl(25, 100%, 94%);
-  border: 3px solid orange;
+.tImg img:focus{
+    border:4px solid orange;
+    background:rgba(240, 238, 238, 0.717);
 }
 
 .fImg {
