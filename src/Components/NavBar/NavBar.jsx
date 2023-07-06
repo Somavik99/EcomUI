@@ -14,8 +14,8 @@ const NavBar = () => {
     setShowCartState(!ShowCartState);
   };
 
-  let ItemsLEngth = CartState.items.length * CartState.count.toString()
-console.log(CartState.count.toString())
+  let ItemsLEngth = CartState.count === CartState.items.length ?  CartState.items.length:0;
+
   return (
     <div className="NavBar">
       <div className="Nav__cont">

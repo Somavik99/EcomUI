@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FullImages } from "../../ImageData/ImageData";
 import NavBar from "../NavBar/NavBar";
 import AddItems from "../DetailsADD/AddItems";
+import {motion} from "framer-motion"
 import "./HomePage.css"
 
 const HomePage = () => {
@@ -22,7 +23,7 @@ const HomePage = () => {
     
       <div className="Home__cont">
         <div>
-          <div className="FullImage">
+          <motion.div className="FullImage">
             <img
               src={ImgState.image}
               alt="Sneakers"
@@ -30,7 +31,7 @@ const HomePage = () => {
               className="fImg"
               
             />
-          </div> 
+          </motion.div> 
           <div className="Img__cont" >
           {FullImages.map((imgT, index) => {
             return (
