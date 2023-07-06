@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../../Assets/images/logo.svg";
 import BlackCart from "../../Assets/images/icon-cart-black.svg";
-import {  useCartContext } from "../CartContext/CartContext";
+import { useCartContext } from "../CartContext/CartContext";
 import Avatar from "../../Assets/images/image-avatar.png";
 import "./NavBar.css";
 
@@ -14,15 +14,15 @@ const NavBar = () => {
     setShowCartState(!ShowCartState);
   };
 
-  let ItemsLEngth =  CartState.items.length * CartState.count;
-
+  let ItemsLEngth = CartState.items.length * CartState.count.toString()
+console.log(CartState.count.toString())
   return (
     <div className="NavBar">
       <div className="Nav__cont">
         <img
           src={logo}
           alt="sneakers"
-          style={{ marginRight: "1%", marginLeft: "-5%", width:"200px" }}
+          style={{ marginRight: "1%", marginLeft: "-5%", width: "200px" }}
         />
         <div className="Nav__menu">
           <span>Collections</span>
@@ -42,7 +42,7 @@ const NavBar = () => {
               background: "orange",
               color: "white",
               marginBottom: "-8px",
-              fontWeight:"600"
+              fontWeight: "600",
             }}
           >
             {ItemsLEngth}

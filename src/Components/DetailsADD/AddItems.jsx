@@ -15,17 +15,17 @@ const AddItems = () => {
 
   //Increase and decrease item count
 
-const DecreaseCount = (count) => {
+const DecreaseCount = () => {
   CartDispatch({
     type: Actions.DECREASE_COUNT,
-    payload: count,
+
   });
 };
 
-const IncreaseCount = (count) => {
+const IncreaseCount = () => {
   CartDispatch({
     type: Actions.INCREASE_COUNT,
-    payload: count,
+  
   });
 };
 
@@ -64,12 +64,12 @@ const IncreaseCount = (count) => {
               </p>
               <div className="Btn__cont">
                 <div className="Plus__minus">
-                  <span onClick={() => DecreaseCount(prod)}>
+                  <span onClick={DecreaseCount}>
                     <img src={Minus} alt="minus" />
                   </span>
 
                   <>{CartState.count}</>
-                  <span onClick={() => IncreaseCount(prod)}>
+                  <span onClick={IncreaseCount}>
                     <img src={Plus} alt="plus" />
                   </span>
                 </div>
