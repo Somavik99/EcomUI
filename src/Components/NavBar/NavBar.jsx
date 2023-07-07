@@ -3,35 +3,42 @@ import logo from "../../Assets/images/logo.svg";
 import BlackCart from "../../Assets/images/icon-cart-black.svg";
 import { useCartContext } from "../CartContext/CartContext";
 import Avatar from "../../Assets/images/image-avatar.png";
+import Menu from "../../Assets/images/icon-menu.svg";
 import "./NavBar.css";
 
 const NavBar = () => {
-  const [ShowCartState, setShowCartState] = useState(false);
+  const [IsShowState, setIsShowState] = useState({
+    resp: false,
+    cart: false,
+  });
 
   const { CartState } = useCartContext();
 
   const ShowCart = () => {
-    setShowCartState(!ShowCartState);
+    setIsShowState(!IsShowState.cart);
   };
 
-  let ItemsLEngth = CartState.count === CartState.items.length ?  CartState.items.length:0;
+  let ItemsLEngth = CartState.items.length * CartState.count;
 
   return (
     <div className="NavBar">
       <div className="Nav__cont">
+        <button className={IsShowState.resp ? "hidden" : "btn__cont__res"}>
+          {!IsShowState.resp ? <img src={Menu} alt="Menu" /> : ""}
+        </button>
         <img
           src={logo}
           alt="sneakers"
           style={{ marginRight: "1%", marginLeft: "-5%", width: "200px" }}
         />
-        <div className="Nav__menu">
+        <div className={IsShowState.resp ? "Nav__menu__mobile" : "Nav__menu"}>
           <span>Collections</span>
           <span>Men</span>
           <span>Women</span>
           <span>About</span>
           <span>Contact</span>
         </div>
-        <div style={{ marginRight: "-10%" }}>
+        <div style={{}} className="Cart__cont">
           <div
             style={{
               marginLeft: "12px",
