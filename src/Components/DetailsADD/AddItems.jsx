@@ -5,6 +5,7 @@ import { ProductDescription } from "../../ImageData/ImageData";
 import Plus from "../../Assets/images/icon-plus.svg";
 import Minus from "../../Assets/images/icon-minus.svg";
 import Cart from "../../Assets/images/icon-cart.svg";
+import { motion } from "framer-motion";
 import "./AddItems.css";
 
 const AddItems = () => {
@@ -74,7 +75,8 @@ const IncreaseCount = () => {
                   </span>
                 </div>
 
-                <button
+                <motion.button
+                whileTap={{scale:0.8}}
                   disabled={CartState.count === 0}
                   onClick={() => {
                     CartDispatch({
@@ -90,7 +92,7 @@ const IncreaseCount = () => {
                     alt="Cart"
                   />
                   Add To Cart
-                </button>
+                </motion.button>
               </div>
             </div>
           );

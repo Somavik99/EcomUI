@@ -4,18 +4,18 @@ import BlackCart from "../../Assets/images/icon-cart-black.svg";
 import { useCartContext } from "../CartContext/CartContext";
 import Avatar from "../../Assets/images/image-avatar.png";
 import Menu from "../../Assets/images/icon-menu.svg";
+import { motion } from "framer-motion";
+import{RxCross1} from "react-icons/rx"
 import "./NavBar.css";
 
 const NavBar = () => {
-  const [IsShowState, setIsShowState] = useState({
-    resp: false,
-    cart: false,
-  });
+  const [IsShowState, setIsShowState] = useState(false);
+  const [IsCart,setIsCart] = useState(false)
 
   const { CartState } = useCartContext();
 
   const ShowCart = () => {
-    setIsShowState(!IsShowState.cart);
+    setIsCart(!IsCart);
   };
 
   let ItemsLEngth = CartState.items.length * CartState.count;
@@ -23,21 +23,50 @@ const NavBar = () => {
   return (
     <div className="NavBar">
       <div className="Nav__cont">
-        <button className={IsShowState.resp ? "hidden" : "btn__cont__res"}>
-          {!IsShowState.resp ? <img src={Menu} alt="Menu" /> : ""}
-        </button>
+        <motion.button
+          whileTap={{
+            scale: 0.4,
+          }}
+          animate={{
+            x: 0,
+          }}
+          initial={{
+            x:"-100vw",
+          }}
+          transition={{
+            duration: 0.2,
+          }}
+          onClick={() => setIsShowState(!IsShowState)}
+          className="btn__cont__res"
+        >
+          <img src={Menu} alt="Menu" />
+        </motion.button>
+
         <img
           src={logo}
           alt="sneakers"
           style={{ marginRight: "1%", marginLeft: "-5%", width: "200px" }}
         />
-        <div className={IsShowState.resp ? "Nav__menu__mobile" : "Nav__menu"}>
+        <motion.div
+          className={IsShowState?  "Nav__menu__mobile": "Nav__menu__mobile  active"}
+      animate={{
+        x:IsShowState? "-100vw": 0
+      }}
+
+      transition={{
+        type:"tween",
+        duration:0.5
+      }}
+        >
+          <div>
+          <button className="btn__close" onClick={()=>setIsShowState(!IsShowState)} ><RxCross1 color="orange" size="25px"/> </button>
+          </div>
           <span>Collections</span>
           <span>Men</span>
           <span>Women</span>
           <span>About</span>
           <span>Contact</span>
-        </div>
+        </motion.div>
         <div style={{}} className="Cart__cont">
           <div
             style={{
