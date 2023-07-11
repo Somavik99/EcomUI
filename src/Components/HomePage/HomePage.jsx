@@ -10,6 +10,18 @@ const HomePage = () => {
   const [current, setCurrent] = useState(0);
   const [ImgState, setImageState] = useState(FullImages[current]);
 
+let length = FullImages.length;
+
+
+
+if(!Array.isArray(FullImages) || length<=0){
+  return null
+}
+
+const HomeStyle = {
+  maxWidth:"1500px"
+}
+
   let HandleImageChange = (images) => {
     setTimeout(() => {
       setImageState(images);

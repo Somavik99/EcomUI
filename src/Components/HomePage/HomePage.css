@@ -64,4 +64,7 @@
   .Home{
     padding: 5;
   }
+  .FullImage{
+display: none;
+  }
 }

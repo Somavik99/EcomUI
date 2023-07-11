@@ -18,6 +18,10 @@ const NavBar = () => {
     setIsCart(!IsCart);
   };
 
+  const Style= {
+   maxWidth:"1500px",
+  }
+
   let ItemsLEngth = CartState.items.length * CartState.count;
 
   return (
@@ -49,7 +53,7 @@ const NavBar = () => {
         />
         <motion.div
           className={
-            IsShowState ? "Nav__menu__mobile" : "Nav__menu__mobile  active"
+           Style? "Nav__menu__mobile  active" : "Nav__menu__mobile "
           }
           animate={{
             x: IsShowState ? "-100vw" : 0,
