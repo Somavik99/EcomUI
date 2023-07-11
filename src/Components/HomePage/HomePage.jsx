@@ -37,7 +37,6 @@ const HomePage = () => {
             return (
               <div key={index}  className="tImg">
                 <img
-               
                   src={imgT.image}
                   alt="err"
                   style={{ height: "100px", width: "100px",borderRadius:"20px" }}

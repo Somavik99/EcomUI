@@ -28,19 +28,19 @@
   overflow: none;
   border-radius: 20px;
   transition: 0.5s ease;
-  width:100px;
+  width: 100px;
   height: 100px;
-  border:4px solid transparent ;
+  border: 4px solid transparent;
 }
 
-.tImg img:hover{
-    border:4px solid orange;
-    background:rgba(240, 238, 238, 0.717);
+.tImg img:hover {
+  border: 4px solid orange;
+  background: rgba(240, 238, 238, 0.717);
 }
 
-.tImg img:focus{
-    border:4px solid orange;
-    background:rgba(240, 238, 238, 0.717);
+.tImg img:focus {
+  border: 4px solid orange;
+  background: rgba(240, 238, 238, 0.717);
 }
 
 .fImg {
@@ -54,4 +54,14 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+@media (max-width: 1450px) {
+  .Home__cont {
+    display: flex;
+    flex-direction: column;
+  }
+  .Home{
+    padding: 5;
+  }
 }

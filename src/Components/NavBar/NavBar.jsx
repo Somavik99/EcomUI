@@ -5,12 +5,12 @@ import { useCartContext } from "../CartContext/CartContext";
 import Avatar from "../../Assets/images/image-avatar.png";
 import Menu from "../../Assets/images/icon-menu.svg";
 import { motion } from "framer-motion";
-import{RxCross1} from "react-icons/rx"
+import { RxCross1 } from "react-icons/rx";
 import "./NavBar.css";
 
 const NavBar = () => {
   const [IsShowState, setIsShowState] = useState(false);
-  const [IsCart,setIsCart] = useState(false)
+  const [IsCart, setIsCart] = useState(false);
 
   const { CartState } = useCartContext();
 
@@ -31,7 +31,7 @@ const NavBar = () => {
             x: 0,
           }}
           initial={{
-            x:"-100vw",
+            x: "-100vw",
           }}
           transition={{
             duration: 0.2,
@@ -48,18 +48,24 @@ const NavBar = () => {
           style={{ marginRight: "1%", marginLeft: "-5%", width: "200px" }}
         />
         <motion.div
-          className={IsShowState?  "Nav__menu__mobile": "Nav__menu__mobile  active"}
-      animate={{
-        x:IsShowState? "-100vw": 0
-      }}
-
-      transition={{
-        type:"tween",
-        duration:0.5
-      }}
+          className={
+            IsShowState ? "Nav__menu__mobile" : "Nav__menu__mobile  active"
+          }
+          animate={{
+            x: IsShowState ? "-100vw" : 0,
+          }}
+          transition={{
+            type: "tween",
+            duration: 0.5,
+          }}
         >
           <div>
-          <button className="btn__close" onClick={()=>setIsShowState(!IsShowState)} ><RxCross1 color="orange" size="25px"/> </button>
+            <button
+              className="btn__close"
+              onClick={() => setIsShowState(!IsShowState)}
+            >
+              <RxCross1 color="orange" size="25px" />{" "}
+            </button>
           </div>
           <span>Collections</span>
           <span>Men</span>
