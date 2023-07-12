@@ -10,17 +10,25 @@ const HomePage = () => {
   const [current, setCurrent] = useState(0);
   const [ImgState, setImageState] = useState(FullImages[current]);
 
-let length = FullImages.length;
+  let length = FullImages.length;
 
+  if (!Array.isArray(FullImages) || length <= 0) {
+    return null;
+  }
 
+  const HomeStyle = {
+    innerWidth: "1500px",
+  };
 
-if(!Array.isArray(FullImages) || length<=0){
-  return null
-}
+  const NextButton = (next) => {
+    setCurrent(next === length - 1 ? 0 : next + 1);
+  };
 
-const HomeStyle = {
-  maxWidth:"1500px"
-}
+  const PrevButton = (prev) => {
+    setCurrent(prev === 0 ? length - 1 : prev - 1);
+  };
+
+  console.log(current);
 
   let HandleImageChange = (images) => {
     setTimeout(() => {
@@ -44,30 +52,44 @@ const HomeStyle = {
                 className="fImg"
               />
             </motion.div>
-            <div className="Img__cont">
-              <button>
-                <AiOutlineLeft />
-              </button>
-              {FullImages.map((imgT, index) => {
-                return (
-                  <div key={index} className="tImg">
-                    <img
-                      src={imgT.image}
-                      alt="err"
-                      style={{
-                        height: "100px",
-                        width: "100px",
-                        borderRadius: "20px",
-                      }}
-                      onClick={() => HandleImageChange(imgT)}
-                    />
-                  </div>
-                );
-              })}
-              <button>
-                <AiOutlineRight />
-              </button>
-            </div>
+            {
+              <div className={HomeStyle ? "Img__cont  active" : "Img__cont"}>
+                <span>
+                <button
+                  onClick={() => PrevButton(current)}
+                  className="Previous"
+                >
+                  <AiOutlineLeft />
+                </button>
+                </span>
+                {FullImages.map((imgT, index) => {
+                  return (
+                <div
+                      key={index}
+                      className={index === current ? "tImg  active" : "tmg"}
+                    >
+                      {index === current &&  (
+                        <img
+                          src={imgT.image}
+                          alt="err"
+                          style={{
+                            height: "100px",
+                            width: "100px",
+                            borderRadius: "20px",
+                          }}
+                          onClick={() => HandleImageChange(imgT)}
+                        />
+                      ) }
+                    </div>
+                  );
+                })}
+                <span className="Next">
+                <button onClick={() => NextButton(current)} >
+                  <AiOutlineRight />
+                </button>
+                </span>
+              </div>
+            }
           </div>
           <div className="Add__cont">
             <AddItems />

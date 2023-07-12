@@ -4,6 +4,7 @@
   align-items: center;
   flex-direction: rows;
   gap: 80px;
+  transition: all 0.5s ease-in-out;
 }
 
 .Add__cont {
@@ -22,6 +23,10 @@
   align-items: center;
   gap: 6.5%;
   margin-left: -5%;
+}
+
+.Img__cont  button{
+display:none;
 }
 
 .tImg img {
@@ -56,10 +61,11 @@
   text-align: center;
 }
 
-@media (max-width: 1450px) {
+@media (max-width: 1500px) {
   .Home__cont {
     display: flex;
     flex-direction: column;
+    transition: all 0.5s ease-in-out;
   }
   .Home{
     padding: 5;
@@ -67,4 +73,44 @@
   .FullImage{
 display: none;
   }
+.tImg.active{
+display:flex;
+justify-content: center;
+align-items: center;
+position:relative;
+padding:  5% 0 0 5% ;
+}
+
+
+
+.Img__cont.active {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  flex-direction: row;
+  align-content: center;
+  padding:0;
+  margin:0;
+  position: relative;
+  margin-left: -15%;
+}
+
+.Img__cont.active .Next{
+  display: flex;
+ margin-left: 15px;
+ padding: 0;
+ margin: 0;
+ 
+ z-index: 2;
+ }
+
+.Img__cont.active .Previous{
+ display: flex;
+margin-right: 15%;
+padding: 0;
+margin: 0;
+
+z-index: 2;
+}
+
 }
