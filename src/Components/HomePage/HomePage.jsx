@@ -68,7 +68,7 @@ const HomePage = () => {
                       key={index}
                       className={index === current ? "tImg  active" : "tmg"}
                     >
-                      {index === current &&  (
+                     
                         <img
                           src={imgT.image}
                           alt="err"
@@ -79,7 +79,7 @@ const HomePage = () => {
                           }}
                           onClick={() => HandleImageChange(imgT)}
                         />
-                      ) }
+                     
                     </div>
                   );
                 })}

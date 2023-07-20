@@ -39,6 +39,7 @@
 }
 
 
+
 .NavBar {
   margin-bottom: 80px;
   border-bottom: 1px solid rgba(165, 165, 165, 0.528);
@@ -157,20 +158,22 @@ margin-left: 0.51%;
     height: 200%;
     width: 25%;
     border-radius: 15px;
-  
+  margin-bottom: 5%;
+ 
   }
   
 
 
   .Nav__menu__mobile.active span {
     width: 30px;
-    padding:-5px;
-    height: 100px;
+    padding:5px;
+    height: 120px;
     border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 6.8%;
+    margin-bottom: 2%;
   }
   .Nav__menu__mobile.active span:hover {
     width: 100%;
@@ -194,7 +197,7 @@ margin-left: 0.51%;
   }
   .Nav__menu__mobile{
   margin-top: 10%;
-  
+  display: none;
   }
 
   .btn__close{
@@ -229,7 +232,7 @@ margin-left: 0.51%;
     flex-direction: column;
     position: absolute;
   float: left;
-    margin-top: 50%;
+    margin-top: 60%;
     margin-right: 50%;
     position: absolute;
     color: rgb(255, 255, 255);
@@ -240,7 +243,7 @@ margin-left: 0.51%;
   }
   .Nav__menu__mobile.active span {
     width: 30px;
-    /* height: 30px; */
+    height: 80px;
     border-radius: 4px;
     display: flex;
     justify-content: center;
